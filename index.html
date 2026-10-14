@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flora - Botany & Gardening</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <a href="#" class="logo" data-testid="logo">🌸 Flora</a>
+        <div class="nav-right">
+            <input type="text" class="search-bar" id="searchBar" data-testid="search-input" placeholder="Search products...">
+            <a href="#" class="btn about-btn" id="aboutBtn" data-testid="about-btn">About Us</a>
+            <button class="btn signup-btn" id="signupBtn" data-testid="signup-btn">Sign Up</button>
+            <button class="btn cart-btn" id="cartBtn" data-testid="cart-btn" style="background: var(--accent); color: white; position: relative;">
+                🛒 Cart 
+                <span id="cartCount" style="background: var(--primary); border-radius: 50%; padding: 2px 8px; margin-left: 5px;">0</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" data-testid="hero-section">
+        <h1>Welcome to Flora</h1>
+        <p>Your premier destination for fresh flowers, premium seeds, and quality gardening tools</p>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories" data-testid="categories-section">
+        <div class="category-card" data-category="flowers" data-testid="category-flowers">
+            <div class="category-icon">🌹</div>
+            <h3>Flowers</h3>
+            <p>Beautiful bouquets & potted plants</p>
+        </div>
+        <div class="category-card" data-category="seeds" data-testid="category-seeds">
+            <div class="category-icon">🌻</div>
+            <h3>Seeds</h3>
+            <p>Premium herb & flower seeds</p>
+        </div>
+        <div class="category-card" data-category="tools" data-testid="category-tools">
+            <div class="category-icon">🛠️</div>
+            <h3>Gardening Tools</h3>
+            <p>High-quality gardening essentials</p>
+        </div>
+    </section>
+
+    <!-- Bestsellers -->
+    <section class="bestsellers" data-testid="bestsellers-section">
+        <h2 class="section-title">🌟 Bestsellers</h2>
+        <div class="products-grid" id="bestsellersGrid" data-testid="bestsellers-grid"></div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" data-testid="contact-section">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-info">
+            <div>
+                <h3>📧 Email</h3>
+                <p data-testid="contact-email">Flora@gmail.com</p>
+            </div>
+            <div>
+                <h3>📞 Phone</h3>
+                <p data-testid="contact-phone">+20 1511122233</p>
+            </div>
+            <div>
+                <h3>📍 Location</h3>
+                <p data-testid="contact-location">Cairo, Egypt</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal" data-testid="signup-modal">
+        <div class="modal-content">
+            <span class="close" data-testid="signup-close">&times;</span>
+            <h2>🌸 Sign up for our newsletter</h2>
+            <form id="signupForm" data-testid="signup-form">
+                <div class="form-group">
+                    <label for="userName">Full Name</label>
+                    <input type="text" id="userName" data-testid="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="userEmail">Email Address</label>
+                    <input type="email" id="userEmail" data-testid="signup-email" required>
+                </div>
+                <button type="submit" class="btn signup-btn" data-testid="signup-submit" style="width: 100%; font-size: 1.1rem;">Sign Up Now</button>
+            </form>
+            <div id="successMsg" data-testid="signup-success" style="display: none; margin-top: 1rem; padding: 1rem; background: var(--accent); border-radius: 10px; color: white; text-align: center;">
+                <h3>Success! 🎉</h3>
+                <p>Thank you for joining our Flora family!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal" data-testid="about-modal">
+        <div class="modal-content">
+            <span class="close" data-testid="about-close">&times;</span>
+            <div id="aboutContent">
+                <h2>🌿 About Us – Flora</h2>
+                <p style="font-size: 1.2rem; font-style: italic; margin-bottom: 2rem;">
+                    <strong>Rooted in family. Grown by hand. Blooming across Egypt.</strong>
+                </p>
+                <p>Every great story starts with a seed. Ours was planted in 2020, in the heart of Cairo, during a time when the world needed more beauty, more connection, and more meaning. That's when we opened our first small workshop—a family dream built on a simple belief: flowers should do more than just decorate a room. They should nurture the land and the people who grow them.</p>
+                <br>
+                <p>Today, Flora remains proudly family-owned and family-run. From early morning harvests to the final ribbon tied around your bouquet, our hands never leave the work. We don't outsource. We don't import lifeless stems. Instead, we grow every flower ourselves, and craft every tool by hand, right here in Egypt. You'll feel the difference in the scent of a fresh jasmine sprig, the strength of a hand-forged vase, and the honesty of a petal that never touched a cargo hold.</p>
+                <br>
+                <p>We currently call Cairo home—one cozy, sunlit location where you can watch arrangements come to life. And because we believe every city deserves a little more green, we are thrilled to announce that a second shop is on its way to Alexandria. Soon, the Mediterranean breeze will carry our blooms, too.</p>
+                <br>
+                <p>But our roots go deeper than our storefronts. We know that a thriving business must lift up the community that sustains it. That's why 20% of our profits go directly to local farmers—the men and women who work the soil alongside us. When you buy from Flora, you're not just buying flowers. You're investing in Egyptian agriculture, fair practice, and family livelihoods.</p>
+                <br>
+                <p>From our family to yours—welcome to our garden.</p>
+                <br>
+                <p><strong>Flora</strong><br>Cairo (open now) | Alexandria (coming soon)<br>Grown, made, and given by hand. Always.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal" data-testid="cart-modal">
+        <div class="modal-content">
+            <span class="close cart-close" data-testid="cart-close">&times;</span>
+            <h2>🛒 Your Shopping Cart</h2>
+            <div id="cartItemsList" class="product-list" data-testid="cart-items"></div>
+            <div class="cart-summary">
+                <h3>Total: <span id="cartTotal" class="total-price" data-testid="cart-total">0 LE</span></h3>
+                <button id="checkoutBtn" class="btn signup-btn" data-testid="checkout-btn" style="margin-top: 1rem;">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="modal" data-testid="checkout-modal">
+        <div class="modal-content">
+            <span class="close checkout-close" data-testid="checkout-close">&times;</span>
+            <h2>📦 Checkout</h2>
+            <form id="checkoutForm" data-testid="checkout-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="checkoutName" data-testid="checkout-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Shipping Address</label>
+                    <input type="text" id="checkoutAddress" data-testid="checkout-address" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="tel" id="checkoutPhone" data-testid="checkout-phone" required>
+                </div>
+                <div class="cart-summary">
+                    <h3>Order Total: <span id="checkoutTotal" data-testid="checkout-total">0 LE</span></h3>
+                </div>
+                <button type="submit" class="btn signup-btn" data-testid="place-order-btn" style="width: 100%;">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Category Modal (Flowers, Seeds, Tools) -->
+    <div id="categoryModal" class="modal" data-testid="category-modal">
+        <div class="modal-content">
+            <span class="close category-close" data-testid="category-close">&times;</span>
+            <h2 id="categoryTitle" data-testid="category-title">Category Title</h2>
+            <div id="categoryContent" data-testid="category-content"></div>
+        </div>
+    </div>
+
+    <!-- Themed Bouquets Modal -->
+<div id="themedModal" class="modal" data-testid="themed-modal">
+    <div class="modal-content">
+        <span class="close themed-close" data-testid="themed-close">&times;</span>
+        <h2>🌸 Themed Bouquets</h2>
+        <div id="themedOptions" class="themed-bouquets-grid" data-testid="themed-options"></div>
+    </div>
+</div>
+
+    <!-- Custom Bouquet Modal -->
+    <div id="customModal" class="modal" data-testid="custom-modal">
+        <div class="modal-content">
+            <span class="close custom-close" data-testid="custom-close">&times;</span>
+            <h2>🎨 Customize Your Bouquet</h2>
+            <div class="form-group">
+                <label>Select Size:</label>
+                <div class="options-grid" id="sizeOptions" data-testid="size-options">
+                    <div class="option-btn" data-size="small" data-limit="10" data-price="100" data-testid="size-small">Small (10 flowers) - 100 LE base</div>
+                    <div class="option-btn" data-size="medium" data-limit="20" data-price="180" data-testid="size-medium">Medium (20 flowers) - 180 LE base</div>
+                    <div class="option-btn" data-size="large" data-limit="30" data-price="250" data-testid="size-large">Large (30 flowers) - 250 LE base</div>
+                    <div class="option-btn" data-size="xl" data-limit="50" data-price="400" data-testid="size-xl">XL (50 flowers) - 400 LE base</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Select Flowers (current count: <span id="currentFlowerCount" data-testid="flower-count">0</span>/<span id="sizeLimit">0</span>)</label>
+                <div id="flowerSelection" class="flower-grid" data-testid="flower-selection"></div>
+            </div>
+            <div id="customBouquetSummary" class="cart-summary" data-testid="custom-summary">
+                <h3>Your Bouquet</h3>
+                <div id="selectedFlowersList" data-testid="selected-flowers-list"></div>
+                <div class="total-price">Total: <span id="customTotal" data-testid="custom-total">0</span> LE</div>
+                <button id="addCustomToCart" class="btn signup-btn" data-testid="add-custom-cart" style="margin-top: 1rem;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Potted Flowers Modal -->
+    <div id="pottedModal" class="modal" data-testid="potted-modal">
+        <div class="modal-content">
+            <span class="close potted-close" data-testid="potted-close">&times;</span>
+            <h2>🌱 Potted Flowers</h2>
+            <div class="form-group">
+                <label>Select Box Size:</label>
+                <div class="options-grid" id="boxSizeOptions" data-testid="box-size-options">
+                    <div class="option-btn" data-box="small" data-count="4" data-price="200">Small Box (4 flowers) - 200 LE</div>
+                    <div class="option-btn" data-box="medium" data-count="8" data-price="350">Medium Box (8 flowers) - 350 LE</div>
+                    <div class="option-btn" data-box="large" data-count="12" data-price="500">Large Box (12 flowers) - 500 LE</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Select Shape:</label>
+                <div class="options-grid" id="shapeOptions" data-testid="shape-options">
+                    <div class="option-btn" data-shape="circle">Circle</div>
+                    <div class="option-btn" data-shape="rectangle">Rectangle</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Select Flower Type:</label>
+                <div id="pottedFlowerSelection" class="flower-grid" data-testid="potted-flower-selection"></div>
+            </div>
+            <div id="pottedSummary" class="cart-summary" data-testid="potted-summary">
+                <h3>Your Potted Box</h3>
+                <div id="pottedDetails"></div>
+                <div class="total-price">Total: <span id="pottedTotal" data-testid="potted-total">0</span> LE</div>
+                <button id="addPottedToCart" class="btn signup-btn" data-testid="add-potted-cart" style="margin-top: 1rem;">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Results Modal -->
+    <div id="searchModal" class="modal" data-testid="search-modal">
+        <div class="modal-content">
+            <span class="close search-close" data-testid="search-close">&times;</span>
+            <h2>🔍 Search Results</h2>
+            <div id="searchResults" data-testid="search-results"></div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div id="orderConfirmationModal" class="modal" data-testid="order-modal">
+        <div class="modal-content">
+            <span class="close order-close" data-testid="order-close">&times;</span>
+            <h2>✅ Order Confirmed!</h2>
+            <p>Your order has been placed successfully. Thank you for shopping with Flora!</p>
+            <button id="closeOrderBtn" class="btn signup-btn" data-testid="close-order-btn">Continue Shopping</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
